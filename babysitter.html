@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babysitter Profiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/baby.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px; /* Increased width for better layout */
+            text-align: center;
+            margin-top: 80px; /* Ensure content below navbar */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-gap: 20px; /* Spacing between cards */
+        }
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        .babysitter-card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-btn {
+            padding: 0.5rem 1rem;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px; /* Adjust margin for spacing */
+        }
+
+        .booking-btn-container {
+            grid-column: span 2; /* Span across both columns */
+            display: flex;
+            justify-content: center;
+        }
+
+        .booking-btn:hover {
+            background-color: #2b7fd8;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+            align-items: center;
+            padding: 10px;
+            background-color: #A94064;
+            color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .profile-options {
+            margin-left: auto; /* Pushes the logout link to the right */
+        }
+
+        .profile-options a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .profile-options a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="profile-options">
+            <a href="index.html" onclick="logout()">Logout</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="babysitter-card">
+            <h2>Fatin Nur Alia</h2>
+            <p>Experience: 5 years</p>
+            <p>Availability: Mon-Fri, 9 AM - 5 PM</p>
+            <p>Email: Fatinnalia@gmail.com</p>
+            <p>Contact: 015-88546215</p>
+        </div>
+
+        <div class="babysitter-card">
+            <h2>Nur Amalin Mushkirin</h2>
+            <p>Experience: 3 years</p>
+            <p>Availability: Weekends, 8 AM - 8 PM</p>
+            <p>Email: AmalinMushkirin@gmail.com</p>
+            <p>Contact: 015-84445125</p>
+        </div>
+
+        <div class="babysitter-card">
+            <h2>Nur Adilah Ainaa</h2>
+            <p>Experience: 4 years</p>
+            <p>Availability: Mon-Sat, 10 AM - 6 PM</p>
+            <p>Email: Ainadilala@gmail.com</p>
+            <p>Contact: 011-5514261</p>
+        </div>
+
+        <div class="babysitter-card">
+            <h2>Puteri Balqis</h2>
+            <p>Experience: 2 years</p>
+            <p>Availability: Weekdays, 7 AM - 4 PM</p>
+            <p>Email: PuteriBalqis@gmail.com</p>
+            <p>Contact: 014-4451516</p>
+        </div>
+
+        <div class="booking-btn-container">
+            <button class="booking-btn" onclick="redirectToBooking()">Book Babysitter</button>
+        </div>
+  </div>
+
+    <script>
+        function redirectToBooking() {
+            window.location.href = 'booking.html';
+        }
+
+        function logout() {
+            // Perform any logout actions if needed
+            alert('Logged out successfully.');
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

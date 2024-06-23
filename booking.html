@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babysitter Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/baby.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* Align items to the right */
+            align-items: center;
+            padding: 10px;
+            background-color: #A94064;
+            color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        .profile-options {
+            margin-left: auto; /* Pushes the logout link to the right */
+        }
+
+        .profile-options a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .profile-options a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            margin-top: 20px; /* Adjust top margin */
+        }
+
+        .container h1 {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="text"]:focus,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    background-color: white; /* Ensures select field background is white */
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.bookings-container {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.booking-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="profile-options">
+            <a href="index.html" onclick="logout()">Logout</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Book a Babysitter</h1>
+        <form onsubmit="submitBooking(event)">
+            <label for="parentName">Your Name</label>
+            <input type="text" id="parentName" required>
+
+            <label for="babysitterName">Select Babysitter</label>
+            <select id="babysitterName" required>
+                <option value="">--Select--</option>
+                <option value="Babysitter 1">Fatin Nur Alia</option>
+                <option value="Babysitter 2">Nur Amalin Mushkirin</option>
+                <option value="Babysitter 3">Nur Adilah Ainaa</option>
+                <option value="Babysitter 4">Puteri Balqis</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" required>
+
+            <button type="submit" class="btn btn-success">Book Now</button>
+        </form>
+        
+        <div class="bookings-container" id="bookingsContainer"></div>
+    </div>
+    <script src="js/booking.js?"></script>
+</body>
+</html>

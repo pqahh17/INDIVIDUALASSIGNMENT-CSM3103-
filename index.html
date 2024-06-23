@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babysitter Login and Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/baby.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-container {
+            margin-top: 1rem;
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0 0.25rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        p {
+            margin: 0.5rem 0 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Welcome to Babysitter!</h1>
+        <div class="form-container" id="signupForm">
+            <h2>Sign Up</h2>
+            <form onsubmit="signUp(event)">
+                <label for="signupName">Name</label>
+                <input type="text" id="signupName" required>
+                <label for="signupEmail">Email</label>
+                <input type="email" id="signupEmail" required>
+                <label for="signupUsername">Username</label>
+                <input type="text" id="signupUsername" required>
+                <label for="signupPassword">Password</label>
+                <input type="password" id="signupPassword" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login here</a></p>
+        </div>
+        <div class="form-container" id="loginForm" style="display:none;">
+            <h2>Login</h2>
+            <form onsubmit="login(event)">
+                <label for="loginUsername">Username</label>
+                <input type="text" id="loginUsername" required>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign up here</a></p>
+        </div>
+    </div>
+    <script src="js/login.js?"></script>
+</body>
+</html>
